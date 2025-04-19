@@ -1,7 +1,7 @@
 <template>
     <div class="content-container">
         <img src="https://rowmark-ram.s3.amazonaws.com/Rowmark-R.svg" alt="Rowmark-R">
-        <div>
+        <div class="text-content">
             <h2>
                 Coding Test <span>v</span>2.0.1
             </h2>
@@ -13,48 +13,54 @@
 </template>
 
 <style scoped lang="scss">
+$font-family: Lato;
+
 .content-container {
     display: flex;
     flex-direction: column;
-    width: 674px;
-    height: 536px;
-    position: absolute;
-    top: 435px;
-    left: 278px;
-    z-index: 1;
+    align-items: flex-start;
+    gap: 1rem;
+    max-width: 674px;
+    margin: 2rem auto auto 250px;
+    padding: 1rem;
+    box-sizing: border-box;
 
     img {
-        width: 268px;
-        height: 209px;
+        width: clamp(120px, 30vw, 268px);
+        height: auto;
     }
 
-    div {
-        width: 635px;
+    .text-content {
+        flex: 1;
         text-align: left;
+        font-family: $font-family;
 
         h2 {
             margin: 0;
             padding: 0;
             color: #003475;
-            font-size: 36px;
+            font-size: clamp(1.75rem, 4vw, 2.25rem);
+
             span {
-                margin: 0;
-                padding: 0;
                 font-size: 25px;
                 font-weight: 300;
             }
         }
 
         h3 {
-            margin: 0;
-            padding: 0;
+            margin: 0.5rem 0;
             color: #5A5A5A;
-            font: italic normal 300 25px Lato;
+            font: italic normal 300 clamp(1.25rem, 2vw, 1.6rem) $font-family;
         }
         p {
             color: #707070;
-            font-size: 20px;
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            line-height: 1.4;
         }
+    }
+
+    @media (max-width: 1800px) {
+        margin: auto;
     }
 }
 </style>

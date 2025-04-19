@@ -10,15 +10,14 @@
         justify-content: end;
         align-items: center;
         width: 100%;
-        height: 78px;
-        position: absolute;
-        bottom: 0;
-        z-index: 1;
+        height: 100%;
+        max-height: 78px;
         background-color: #464646;
         color: #FFFFFF;
 
         p {
-            width: 416px;
+            width: 100%;
+            max-width: 416px;
             height: 19px;
             margin-right: 278.5px;
             padding: 0;

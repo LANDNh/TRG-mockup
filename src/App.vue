@@ -13,8 +13,10 @@ import ContentComp from './components/ContentComp.vue';
           <p>What You Don't Know</p>
         </span>
       </div>
-      <ContentComp/>
-      <NewsComp/>
+      <div class="main-body">
+        <ContentComp/>
+        <NewsComp/>
+      </div>
     </div>
     <FooterComp/>
   </div>
@@ -29,29 +31,31 @@ $font-family: Lato;
   align-items: center;
   justify-content: center;
   width: 100dvw;
-  height: 100dvh;
+  height: 100vh;
   margin: 0;
   padding: 0;
   font-family: $font-family;
 
   .content {
+    flex: 1;
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 1080px;
+    position: relative;
     z-index: 0;
-    background: #FFFFFF 0% 0% no-repeat padding-box;
+    background: #FFFFFF;
   }
 
   .header {
     display: grid;
     grid-template-areas: 'a b';
-    width: 1920px;
-    height: 546px;
+    width: 100%;
+    height: 100%;
     position: relative;
-    background: no-repeat url('https://rowmark-ram.s3.amazonaws.com/rowmark_buildingfront.jpg');
+    background-image: url('https://rowmark-ram.s3.amazonaws.com/rowmark_buildingfront.jpg');
+    background-repeat: no-repeat;
     background-size: cover;
-    background-position-y: top -14.5em;
+    background-position: center;
 
     &::before {
       content: '';
@@ -65,17 +69,44 @@ $font-family: Lato;
       grid-area: a;
       justify-self: center;
       align-self: center;
-      width: 675px;
+      width: 100%;
+      max-width: 675px;
       position: relative;
       bottom: 25px;
       right: 25px;
       z-index: 1;
       color: #FFFFFF;
-      font: italic normal normal 65px $font-family;
+      font: italic normal normal clamp(1.5rem, 5vw, 4rem) $font-family;
 
       p {
         margin: 0;
       }
+    }
+
+    @media (max-width: 1350px) {
+      padding-bottom: 600px;
+      background-size: auto;
+      background-position-y: 0;
+    }
+  }
+
+  .main-body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 2rem;
+    width: 100%;
+    max-width: 1920px;
+    margin-top: -175px;
+    padding: 1rem;
+    z-index: 2;
+    box-sizing: border-box;
+
+    @media (max-width: 1350px) {
+      flex-direction: column;
+      align-items: center;
+      margin-top: -140px;
     }
   }
 }
