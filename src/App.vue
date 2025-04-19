@@ -1,6 +1,7 @@
 <script setup>
 import FooterComp from './components/FooterComp.vue';
 import NewsComp from './components/NewsComp.vue';
+import ContentComp from './components/ContentComp.vue';
 </script>
 
 <template>
@@ -12,6 +13,7 @@ import NewsComp from './components/NewsComp.vue';
           <p>What You Don't Know</p>
         </span>
       </div>
+      <ContentComp/>
       <NewsComp/>
     </div>
     <FooterComp/>
