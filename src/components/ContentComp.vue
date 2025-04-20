@@ -1,6 +1,8 @@
 <template>
     <div class="content-container">
-        <img src="https://rowmark-ram.s3.amazonaws.com/Rowmark-R.svg" alt="Rowmark-R">
+        <div class="logo-wrapper">
+            <img src="https://rowmark-ram.s3.amazonaws.com/Rowmark-R.svg" alt="Rowmark-R">
+        </div>
         <div class="text-content">
             <h2>
                 Coding Test <span>v</span>2.0.1
@@ -21,13 +23,28 @@ $font-family: Lato;
     align-items: flex-start;
     gap: 1rem;
     max-width: 674px;
-    margin: 2rem auto auto 250px;
+    margin: clamp(47.8vh, 2vh, 55vh) auto auto 17rem;
     padding: 1rem;
     box-sizing: border-box;
 
-    img {
-        width: clamp(120px, 30vw, 268px);
-        height: auto;
+    .logo-wrapper {
+        margin-bottom: -5.5rem;
+        position: relative;
+        z-index: 2;
+        transform: translateY(-50%);
+
+        img {
+            display: block;
+            width: clamp(60px, 15vw, 268px);
+            height: auto;
+            margin: 0 auto;
+        }
+
+
+        @media (max-width: 1350px) {
+            margin-bottom: -1rem;
+            transform: translateY(-30%);
+        }
     }
 
     .text-content {
@@ -39,7 +56,7 @@ $font-family: Lato;
             margin: 0;
             padding: 0;
             color: #003475;
-            font-size: clamp(1.75rem, 4vw, 2.25rem);
+            font-size: clamp(1.2rem, 4vw, 2.25rem);
 
             span {
                 font-size: 25px;
@@ -50,17 +67,26 @@ $font-family: Lato;
         h3 {
             margin: 0.5rem 0;
             color: #5A5A5A;
-            font: italic normal 300 clamp(1.25rem, 2vw, 1.6rem) $font-family;
+            font: italic normal 300 clamp(.9rem, 2vw, 1.6rem) $font-family;
         }
+
         p {
             color: #707070;
-            font-size: clamp(1rem, 2vw, 1.3rem);
+            font-size: clamp(.8rem, 2vw, 1.3rem);
             line-height: 1.4;
         }
     }
 
     @media (max-width: 1800px) {
-        margin: auto;
+        margin: clamp(46.8vh, 2vh, 55vh) 0 0 0;
+    }
+
+    @media (max-width: 1350px) {
+        margin-top: clamp(-15vh, 55vh, -6vh);
+    }
+
+    @media (max-width: 830px) {
+        margin-top: clamp(-6vh, 2vh, -5vh);
     }
 }
 </style>

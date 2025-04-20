@@ -26,7 +26,8 @@ $font-family: Lato;
     display: flex;
     flex-direction: column;
     max-width: 536px;
-    margin: -19rem 260px auto auto;
+    margin: -3.5vh 260px auto auto;
+    position: relative;
     background-color: #FCFCFC;
     box-shadow: 0 3px 3px #00000029;
     border-radius: 0 13px 13px 13px;
@@ -37,7 +38,7 @@ $font-family: Lato;
       align-items: center;
       height: 100px;
       color: #FFFFFF;
-      font: italic normal normal clamp(2rem, 5vw, 3.25rem) $font-family;
+      font: italic normal normal clamp(1.5rem, 5vw, 3.25rem) $font-family;
       background-color: #005A9C;
       border: 4px solid #FFFFFF;
       border-radius: 0 15px 15px 15px;
@@ -45,10 +46,18 @@ $font-family: Lato;
       p {
         margin-left: 33px;
       }
+
+      @media (max-width: 450px) {
+        height: 60px;
+      }
     }
 
     @media (max-width: 1800px) {
-      margin: auto 2rem;
+      margin: 0 clamp(.5rem, 1vw, 2rem);
+    }
+
+    @media (max-width: 1350px) {
+      top: 0;
     }
   }
 
@@ -62,14 +71,14 @@ $font-family: Lato;
   }
   .news-tile {
     padding: 0 21px;
-    font-size: clamp(.8rem, 2vw, 1rem);
+    font-size: clamp(.7rem, 2vw, 1rem);
     text-align: left;
 
     h2 {
       margin: 0;
       padding: 0;
       color: #005A9C;
-      font-size: clamp(1.25rem, 3vw, 1.5rem);
+      font-size: clamp(1.15rem, 3vw, 1.5rem);
       font-weight: normal;
     }
 
