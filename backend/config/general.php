@@ -27,6 +27,9 @@ return [
             'http://127.0.0.1:5173',
             'https://trg-mockup.vercel.app/',
         ],
+        'allowedOrigins' => [
+            'https://trg-mockup.vercel.app',
+        ],
         'aliases' => [
             '@webroot' => dirname(__DIR__) . '/web',
         ],
