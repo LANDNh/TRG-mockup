@@ -13,6 +13,14 @@ class ApiController extends Controller
 
     public function actionGraphql(): Response
     {
+        header('Access-Control-Allow-Origin: https://trg-mockup.vercel.app');
+        header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
+        header('Access-Control-Allow-Headers: Content-Type, Authorization');
+        if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+            http_response_code(204);
+            exit();
+        }
+
         $this->response->format = Response::FORMAT_JSON;
 
         try {
