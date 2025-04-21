@@ -25,6 +25,10 @@ COPY . .
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
+# Configure PHP to ignore deprecated warnings and not display errors
+RUN echo "error_reporting = E_ALL & ~E_DEPRECATED & ~E_STRICT" > /usr/local/etc/php/conf.d/error_reporting.ini \
+    && echo "display_errors = Off" >> /usr/local/etc/php/conf.d/display_errors.ini
+
 # Install PHP dependencies
 RUN composer install --no-dev --optimize-autoloader
 
