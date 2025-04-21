@@ -8,7 +8,6 @@ RUN apt-get update && apt-get install -y \
     libjpeg-dev \
     libpng-dev \
     libwebp-dev \
-    postgresql-client \
     unzip \
     git \
     curl \
@@ -36,16 +35,4 @@ RUN composer install --no-dev --optimize-autoloader
 EXPOSE 8080
 
 # Use the $PORT env var that Render provides
-CMD ["sh", "-c", "\
-    until PGPASSWORD=$CRAFT_DB_PASSWORD psql \
-    -h $CRAFT_DB_SERVER -p $CRAFT_DB_PORT \
-    -U $CRAFT_DB_USER -d $CRAFT_DB_DATABASE -c '\\q' \
-    ; do \
-    echo '⏳ Waiting for Postgres…'; sleep 2; \
-    done && \
-    echo '✅ Postgres is up, running migrations…' && \
-    php craft migrate/all --interactive=0 && \
-    php craft clear-caches/all && \
-    echo '🚀 Starting PHP server' && \
-    php -S 0.0.0.0:${PORT:-8080} -t web \
-    "]
+CMD ["sh", "-c", "php -S 0.0.0.0:${PORT:-8080} -t web"]
