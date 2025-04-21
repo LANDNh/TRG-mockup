@@ -17,7 +17,7 @@ onMounted(async () => {
   `
 
   try {
-    const res = await fetch('/api', {
+    const res = await fetch(import.meta.env.VITE_API_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
