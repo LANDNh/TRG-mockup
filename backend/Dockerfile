@@ -1,5 +1,5 @@
-# Use an official PHP 8.2 image
-FROM php:8.2-fpm
+# Use an official PHP 8.4 image
+FROM php:8.4-fpm
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
