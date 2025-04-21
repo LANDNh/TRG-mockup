@@ -30,6 +30,3 @@ RUN composer install --no-dev --optimize-autoloader
 
 # Expose port
 EXPOSE 8080
-
-# Start PHP-FPM
-CMD ["php-fpm"]
