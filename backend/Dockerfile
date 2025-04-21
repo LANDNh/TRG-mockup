@@ -35,4 +35,7 @@ RUN composer install --no-dev --optimize-autoloader
 EXPOSE 8080
 
 # Use the $PORT env var that Render provides
-CMD ["sh", "-c", "php -S 0.0.0.0:${PORT:-8080} -t web"]
+CMD ["sh", "-c", \
+    "php craft migrate/all --interactive=0 && \
+    php craft clear-caches/all && \
+    php -S 0.0.0.0:${PORT:-8080} -t web"]
