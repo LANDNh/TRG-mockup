@@ -30,8 +30,7 @@ RUN echo "error_reporting = E_ALL & ~E_DEPRECATED & ~E_STRICT" > /usr/local/etc/
 # Install PHP dependencies
 RUN composer install --no-dev --optimize-autoloader
 
-WORKDIR /var/www/html
 EXPOSE 8080
 
 # Use the $PORT env var that Render provides
-CMD ["sh", "-c", "php -S 0.0.0.0:${PORT:-8080} -t web"]
+CMD ["php","-S","0.0.0.0:${PORT:-8080}","-t","web"]
