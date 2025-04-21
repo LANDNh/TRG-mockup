@@ -14,7 +14,9 @@ use craft\helpers\App;
 
 return [
     '*' => [
-        'allowAdminChanges' => true,
+        'allowAdminChanges' => (bool) App::env('CRAFT_ALLOW_ADMIN_CHANGES'),
+        'devMode' => (bool) App::env('CRAFT_DEV_MODE'),
+        'siteUrl' => App::env('PRIMARY_SITE_URL') ?: 'https://trg-mockup.onrender.com/',
         // Prevent generated URLs from including "index.php"
         'omitScriptNameInUrls' => true,
         // Preload Single entries as Twig variables
