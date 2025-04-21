@@ -14,6 +14,8 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-configure gd --with-jpeg --with-webp \
     && docker-php-ext-install pdo pdo_mysql pdo_pgsql zip bcmath intl gd
 
+
+
 # Set working directory
 WORKDIR /var/www/html
 
