@@ -1,14 +1,20 @@
 # Use PHP FPM image
 FROM php:8.4-fpm
 
-# Install system dependencies
 RUN apt-get update && apt-get install -y \
     libpq-dev \
     libzip-dev \
+    libicu-dev \
+    libjpeg-dev \
+    libpng-dev \
+    libwebp-dev \
     unzip \
     git \
     curl \
-    && docker-php-ext-install pdo pdo_mysql pdo_pgsql zip bcmath
+    && docker-php-ext-configure gd --with-jpeg --with-webp \
+    && docker-php-ext-install pdo pdo_mysql pdo_pgsql zip bcmath intl gd
+
+
 
 # Set working directory
 WORKDIR /var/www/html
