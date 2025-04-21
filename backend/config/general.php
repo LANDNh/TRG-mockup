@@ -24,6 +24,7 @@ return [
         'allowedGraphqlOrigins' => [
             'http://localhost:5173',
             'http://127.0.0.1:5173',
+            'https://trg-mockup.vercel.app/',
         ],
         'aliases' => [
             '@webroot' => dirname(__DIR__) . '/web',
