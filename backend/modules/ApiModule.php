@@ -10,5 +10,11 @@ class ApiModule extends \yii\base\Module
     public function init()
     {
         parent::init();
+
+        if (\Craft::$app->getRequest()->getIsConsoleRequest()) {
+            return;
+        }
+
+        \Craft::$app->response->attachBehavior('cors', \modules\middleware\CorsMiddleware::class);
     }
 }
