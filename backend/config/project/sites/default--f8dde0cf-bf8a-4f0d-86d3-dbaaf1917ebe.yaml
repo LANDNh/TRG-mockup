@@ -1,0 +1,8 @@
+baseUrl: $PRIMARY_SITE_URL
+handle: default
+hasUrls: true
+language: en-US
+name: TRG-mockup
+primary: true
+siteGroup: 54ba0e7e-3335-45d3-9b7d-851897d0a28d # TRG-mockup
+sortOrder: 1
