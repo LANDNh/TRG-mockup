@@ -52,6 +52,8 @@ $font-family: Lato;
     align-items: flex-end;
     justify-content: start;
     width: 100%;
+    min-height: 120px;
+    max-height: 600px;
     aspect-ratio: 16 / 4.4;
     position: relative;
     background-image: url('https://rowmark-ram.s3.amazonaws.com/rowmark_buildingfront.jpg');
@@ -73,18 +75,27 @@ $font-family: Lato;
       width: 100%;
       max-width: 675px;
       position: relative;
-      margin: 0 0 24.7vh clamp(26vh, 10vh, 33vh);
+      margin: 11rem;
       z-index: 1;
       color: #FFFFFF;
-      font: italic normal normal clamp(.25rem, 5vw, 4rem) $font-family;
+      font: italic normal normal clamp(1rem, 5vw, 4rem) $font-family;
 
       p {
         margin: 0;
       }
 
+      @media (max-width: 1800px) {
+        margin: 9rem;
+    }
+
       @media (max-width: 1350px) {
         margin: auto;
       }
+
+      @media (max-width: 450px) {
+      margin-bottom: 1rem;
+
+    }
 
     }
 
@@ -118,12 +129,12 @@ $font-family: Lato;
   .main-body {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     align-items: flex-start;
     gap: 2rem;
     width: 100%;
     max-width: 1920px;
-    margin-top: -50vh;
+    margin-top: -6rem;
     margin-bottom: 4rem;
     z-index: 2;
     box-sizing: border-box;

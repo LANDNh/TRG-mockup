@@ -23,8 +23,10 @@ $font-family: Lato;
     align-items: flex-start;
     gap: 1rem;
     max-width: 674px;
-    margin: clamp(47.8vh, 2vh, 55vh) auto auto 17rem;
+    margin: 0 auto;
     padding: 1rem;
+    position: relative;
+    transform: translateY(5rem);
     box-sizing: border-box;
 
     .logo-wrapper {
@@ -77,16 +79,18 @@ $font-family: Lato;
         }
     }
 
-    @media (max-width: 1800px) {
-        margin: clamp(46.8vh, 2vh, 55vh) 0 0 0;
-    }
-
     @media (max-width: 1350px) {
-        margin-top: clamp(-15vh, 55vh, -6vh);
+        margin-top: -3rem;
+        transform: none;
     }
 
     @media (max-width: 830px) {
-        margin-top: clamp(-6vh, 2vh, -5vh);
+        margin-top: -2rem;
+    }
+
+    @media (max-width: 450px) {
+      margin-top: -1.7rem;
+
     }
 }
 </style>
