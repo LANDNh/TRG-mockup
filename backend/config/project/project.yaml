@@ -1,14 +1,14 @@
-dateModified: 1745205944
+dateModified: 1745211700
 email:
   fromEmail: landon.hurst@outlook.com
   fromName: TRG-mockup
   transportType: craft\mail\transportadapters\Sendmail
 meta:
   __names__:
-    36e71239-0fc1-4112-9503-309b9fba0b15: Frontend # Frontend
     54ba0e7e-3335-45d3-9b7d-851897d0a28d: TRG-mockup # TRG-mockup
     86c86349-9fa2-4aa6-8f81-d79e525ddf27: News # News
     89b12c35-adaf-47d8-9a2a-cd4c6229302d: 'Public Schema' # Public Schema
+    548f1cba-ef4e-4962-87a2-412612f6def0: Public # Public
     6309e113-72fa-4f1c-abbf-40b6807d0948: 'News Entry' # News Entry
     c1eae7b4-bf46-4e0b-83e9-20d16eff7d0f: Excerpt # Excerpt
     f8dde0cf-bf8a-4f0d-86d3-dbaaf1917ebe: TRG-mockup # TRG-mockup
@@ -16,8 +16,9 @@ system:
   edition: solo
   live: true
   name: TRG-mockup
+  retryDuration: null
   schemaVersion: 5.7.0.3
-  timeZone: America/Los_Angeles
+  timeZone: America/Chicago
 users:
   allowPublicRegistration: false
   defaultGroup: null

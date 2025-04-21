@@ -13,11 +13,11 @@ previewTargets:
         - label
         - 'Primary entry page'
       -
-        - urlFormat
-        - '{url}'
-      -
         - refresh
         - '1'
+      -
+        - urlFormat
+        - '{url}'
 propagationMethod: all
 siteSettings:
   f8dde0cf-bf8a-4f0d-86d3-dbaaf1917ebe: # TRG-mockup

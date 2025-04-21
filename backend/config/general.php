@@ -12,17 +12,21 @@
 use craft\config\GeneralConfig;
 use craft\helpers\App;
 
-return GeneralConfig::create()
-    // Set the default week start day for date pickers (0 = Sunday, 1 = Monday, etc.)
-    ->defaultWeekStartDay(1)
-    // Prevent generated URLs from including "index.php"
-    ->omitScriptNameInUrls()
-    // Preload Single entries as Twig variables
-    ->preloadSingles()
-    // Prevent user enumeration attacks
-    ->preventUserEnumeration()
-    // Set the @webroot alias so the clear-caches command knows where to find CP resources
-    ->aliases([
-        '@webroot' => dirname(__DIR__) . '/web',
-    ])
-;
+return [
+    '*' => [
+        'allowAdminChanges' => true,
+        // Prevent generated URLs from including "index.php"
+        'omitScriptNameInUrls' => true,
+        // Preload Single entries as Twig variables
+        'preloadSingles' => true,
+        // Prevent user enumeration attacks
+        'preventUserEnumeration' => true,
+        'allowedGraphqlOrigins' => [
+            'http://localhost:5173',
+            'http://127.0.0.1:5173',
+        ],
+        'aliases' => [
+            '@webroot' => dirname(__DIR__) . '/web',
+        ],
+    ],
+];

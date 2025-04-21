@@ -1,4 +1,4 @@
 isPublic: false
-name: Frontend
+name: Public
 scope:
   - 'sections.86c86349-9fa2-4aa6-8f81-d79e525ddf27:read' # News
