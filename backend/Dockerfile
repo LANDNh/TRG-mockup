@@ -34,5 +34,4 @@ RUN composer install --no-dev --optimize-autoloader
 
 EXPOSE 8080
 
-# Use the $PORT env var that Render provides
-CMD php craft serve --host 0.0.0.0 --port 8080
+CMD ["php-fpm"]
